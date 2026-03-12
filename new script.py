@@ -30,8 +30,8 @@ MAX_REQUESTS_PER_HOUR = 40   # increased to accommodate both loops
 MIN_REQUEST_GAP      = 20    # 20 seconds between requests
 
 # ==================== TRADING ADVICE SETTINGS ====================
-ADVICE_MIN_INTERVAL  = 270   # 4.5 minutes (270 seconds)
-ADVICE_MAX_INTERVAL  = 330   # 5.5 minutes (330 seconds)
+ADVICE_MIN_INTERVAL  = 200   # 4.5 minutes (270 seconds)
+ADVICE_MAX_INTERVAL  = 260   # 5.5 minutes (330 seconds)
 
 # ==================== USER AGENT ROTATION ====================
 USER_AGENTS = [
@@ -274,82 +274,82 @@ async def get_groq_analysis() -> Optional[str]:
 def get_fallback_analysis() -> str:
     """Simple generic fallbacks — NO PAIR MENTIONS"""
     fallbacks = [
-        "Pretty standard session, nothing special happening.",
-        "Low energy across the board, just observing for now.",
-        "Ranges are tightening up, could get interesting soon.",
-        "Liquidity looks thin, not ideal for big moves.",
-        "Holding patterns everywhere, no real conviction.",
-        "Wicks are telling a story but price isn't following through.",
-        "Clean levels are being respected, just no momentum yet.",
-        "Feels like everyone is waiting for the same trigger.",
-        "Structure looks decent, just missing the catalyst.",
-        "Sellers showed up briefly but couldn't follow through.",
-        "Buyers are stepping in at key zones, keeping things afloat.",
-        "Typical pre-session drift, nothing to read into.",
-        "Order flow is balanced, no clear edge either way.",
-        "Compression building, usually leads to something eventually.",
-        "Slow rotations within the range, textbook distribution.",
-        "Watching for a flush before any real opportunity shows up.",
-        "Dull session but the levels are clean for tomorrow.",
-        "Not enough participation to trust any breakout right now.",
-        "Market structure intact, just digesting the last move.",
-        "Tight range day, saving energy for the real play."
+                "Fairly normal session, nothing out of the ordinary.",
+        "Momentum is quiet across the market, just monitoring.",
+        "Price action is squeezing tighter, something may develop.",
+        "Liquidity seems light, not supportive for strong moves.",
+        "Everything looks stuck in consolidation, no clear direction.",
+        "Wicks hint at movement but price lacks confirmation.",
+        "Key levels are holding well, but momentum is missing.",
+        "Seems like the market is waiting on a common signal.",
+        "Structure appears solid, just lacking a spark.",
+        "Sellers attempted pressure but failed to continue.",
+        "Buyers are defending important zones steadily.",
+        "Normal slow movement before the active session.",
+        "Order flow appears neutral with no dominant side.",
+        "Volatility compressing, often a sign of upcoming action.",
+        "Gradual rotations within the range, classic behavior.",
+        "Keeping an eye out for a quick sweep before entries.",
+        "Quiet session overall but levels remain well defined.",
+        "Participation is weak, breakouts look unreliable.",
+        "Market framework remains steady after the last move.",
+        "Narrow range today, building energy for the next move."
     ]
     return random.choice(fallbacks)
 
 async def get_random_greeting() -> str:
     """Return a completely safe, simple 1-2 line casual greeting or basic comment."""
     messages = [
-        "Hey what's good",
-        "Afternoon everyone",
-        "Charts looking boring today ngl",
-        "gm gm",
-        "Just pulled up the screens",
-        "Anything moving out there?",
-        "Dead zone right now",
-        "Barely any ticks on the tape",
-        "Marked up my levels, now I wait",
-        "Flat day so far",
-        "Sitting this one out",
-        "My edge isn't showing up today",
-        "Discipline over everything",
-        "London was a snooze, hoping NY delivers",
-        "Might close the laptop early",
-        "Hands off the buy button today",
-        "Cash is a position too",
-        "No reason to be aggressive here",
-        "Hey guys",
-        "Second coffee and still nothing lol",
-        "Hope the week is treating you well",
-        "Price feels like it wants to drop",
-        "Chilling for the next couple hours",
-        "Just ping ponging between levels",
-        "Nothing convincing on the long side yet",
-        "Anyone playing these swings?",
-        "Zero exposure right now",
-        "Going through my trade journal instead",
-        "Pick a direction already",
-        "Mixed signals everywhere",
-        "Need a proper breakout before I care",
-        "Happy I didn't chase that move earlier",
-        "Best trade today is no trade",
-        "Not much going on huh",
-        "Curious how the 4h closes",
-        "This chop will eat you alive if you let it",
-        "Small size or no size on days like this",
-        "Drawing lines on my chart, that's about it",
-        "Slower than a Monday morning",
-        "Need some real volume to push this",
-        "This price action is putting me to sleep",
-        "Gonna take a walk, screens aren't going anywhere",
-        "Reminder: your plan exists for a reason",
-        "Just waiting it out",
-        "Whole market is in chill mode",
-        "Sideways is the theme of the week apparently",
-        "Slept through Asia session, didn't miss a thing",
-        "Setups will come, not gonna force em",
-        "Not vibing with this tape at all",
-        "Hang in there everyone"
+                "Hey everyone, what's up",
+        "Good afternoon folks",
+        "Charts feel pretty dull today not gonna lie",
+        "gm everyone",
+        "Just opened up my charts",
+        "Anything interesting moving?",
+        "Total dead zone at the moment",
+        "Hardly any activity on the tape",
+        "Levels are set, now it's patience time",
+        "Pretty flat session so far",
+        "Staying on the sidelines today",
+        "Not seeing my setup right now",
+        "Sticking to discipline above all",
+        "London session was quiet, maybe NY brings action",
+        "Thinking about logging off early",
+        "Keeping my hands away from the buy button",
+        "Holding cash counts as a position",
+        "No need to push trades here",
+        "Hello everyone",
+        "Second cup of coffee and still slow lol",
+        "Hope your week is going smoothly",
+        "Price looks like it might roll over",
+        "Relaxing for the next few hours",
+        "Just bouncing between the same levels",
+        "Nothing strong enough for longs yet",
+        "Anyone trading these range moves?",
+        "Currently no trades open",
+        "Reviewing my trade journal instead",
+        "Market needs to pick a side already",
+        "Signals are conflicting everywhere",
+        "Waiting for a solid breakout first",
+        "Glad I didn't chase that earlier move",
+        "Sometimes the best move is no trade",
+        "Pretty quiet out there right",
+        "Interested to see where the 4h candle closes",
+        "This kind of chop can destroy accounts",
+        "Either small size or no trades today",
+        "Mostly just marking up my charts",
+        "Moving slower than usual today",
+        "Needs real volume to get going",
+        "This market is making me sleepy",
+        "Might step away for a walk",
+        "Remember your trading plan matters",
+        "Just being patient here",
+        "The whole market feels relaxed today",
+        "Sideways movement all week it seems",
+        "Missed Asia session but nothing happened anyway",
+        "Opportunities will appear, no rush",
+        "Not feeling this market at all",
+        "Stay patient everyone"
     ]
     return random.choice(messages)
 
@@ -803,4 +803,5 @@ if __name__ == "__main__":
         except KeyboardInterrupt:
             print("\n[!] Stopped by user")
         except Exception as e:
+
             print(f"\n[!] Fatal error: {e}")
